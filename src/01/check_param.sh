@@ -64,6 +64,7 @@ check_param() {
     return $error_occurred
 }
 
+# Общая проверка, верен ли ввод всех параметров, если есть хотя бы одна ошибка, то скрипт завершает работу
 check_param "$@"
 if [ $? -ne 0 ]; then
     echo "Error: Some parameter checks failed. Exiting script."

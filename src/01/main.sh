@@ -24,4 +24,5 @@ echo "Start Time: $(date)" > "$LOG_FILE"
 # Проверка переданных параметров
 check_param $1 $2 $3 $4 $5 $6
 
+# Создание папок и файлов
 create_folders_and_files
