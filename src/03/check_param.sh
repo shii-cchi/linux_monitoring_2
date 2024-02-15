@@ -3,7 +3,7 @@
 function check_param {
     # Проверка количества параметров
     if [ "$#" -ne 1 ]; then
-        echo "Error: Insufficient parameters. Please provide all 6 required parameters. Usage: $0 <method_for_removing>"
+        echo "Error: Insufficient parameters. Please provide all 1 required parameters. Usage: $0 <method_for_removing>"
         exit 1
     fi
 

@@ -85,6 +85,8 @@ function get_response_code {
 
 # Генерация логов
 for i in {1..5}; do
+    > log_${i}.txt
+
     # Генерация случайного числа записей от 100 до 1000
     num_records=$((RANDOM % 901 + 100))
     step_seconds=$(shuf -i 10-100 -n1)
