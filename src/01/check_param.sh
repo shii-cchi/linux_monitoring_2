@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check_param() {
+function check_param {
     local error_occurred=0
 
     # Проверка количества параметров
@@ -47,17 +47,18 @@ check_param() {
     fi
 
     # Проверка, что FILE_SIZE_KB соответствует формату "число+kb"
-    if ! [[ "$FILE_SIZE_KB" =~ ^[1-9][0-9]*kb$ ]]; then
+    if [[ "$FILE_SIZE_KB" =~ ^[1-9][0-9]*kb$ ]]; then
+
+        # Извлечение числа из строки (удаляем последние два символа 'kb')
+        size_value=${FILE_SIZE_KB%kb}
+
+        # Проверка, что число не больше 100
+        if [ "$size_value" -gt 100 ]; then
+            echo "Error: FILE_SIZE_KB should be no more than 100."
+            error_occurred=1
+        fi
+    else
         echo "Error: FILE_SIZE_KB should be in the format of 'number+kb' (e.g., 50kb) and greater than zero."
-        error_occurred=1
-    fi
-
-    # Извлечение числа из строки (удаляем последние два символа 'kb')
-    size_value=${FILE_SIZE_KB%kb}
-
-    # Проверка, что число не больше 100
-    if [ "$size_value" -gt 100 ]; then
-        echo "Error: FILE_SIZE_KB should be no more than 100."
         error_occurred=1
     fi
 

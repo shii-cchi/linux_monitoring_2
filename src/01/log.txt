@@ -1,9 +1,5 @@
-Start Time: Thu Feb 15 00:50:57 +07 2024
-/home/syaonka/linux_monitoring_2/src/aaaa_150224 - 15 Feb 2024 00:50:58
-/home/syaonka/linux_monitoring_2/src/aaaa_150224/ceel.aaa_150224 - 15 Feb 2024 00:50:58 - 10kb
-/home/syaonka/linux_monitoring_2/src/aaaa_150224/cceel.aaa_150224 - 15 Feb 2024 00:50:58 - 10kb
-/home/syaonka/linux_monitoring_2/src/aaaa_150224/ccceel.aaa_150224 - 15 Feb 2024 00:50:58 - 10kb
-/home/syaonka/linux_monitoring_2/src/aaaaa_150224 - 15 Feb 2024 00:50:58
-/home/syaonka/linux_monitoring_2/src/aaaaa_150224/ceel.aaa_150224 - 15 Feb 2024 00:50:58 - 10kb
-/home/syaonka/linux_monitoring_2/src/aaaaa_150224/cceel.aaa_150224 - 15 Feb 2024 00:50:58 - 10kb
-/home/syaonka/linux_monitoring_2/src/aaaaa_150224/ccceel.aaa_150224 - 15 Feb 2024 00:50:58 - 10kb
+Start Time: Thu Feb 15 01:59:11 +07 2024
+/home/syaonka/linux_monitoring_2/src/aaaa_150224 - 15 Feb 2024 01:59:14
+/home/syaonka/linux_monitoring_2/src/aaaa_150224/aaaa.bbb_150224 - 15 Feb 2024 01:59:14 - 3kb
+/home/syaonka/linux_monitoring_2/src/aaaa_150224/aaaaa.bbb_150224 - 15 Feb 2024 01:59:14 - 3kb
+End Time: Thu Feb 15 01:59:14 +07 2024
