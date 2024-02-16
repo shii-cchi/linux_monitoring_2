@@ -6,7 +6,7 @@ chmod +x *.sh
 . ./create_folders_and_files.sh
 
 # Создание или очистка лог-файла
-LOG_FILE="log.txt"
+LOG_FILE="log.log"
 > "$LOG_FILE"
 
 # Проверка успешного создания

@@ -85,7 +85,7 @@ function get_response_code {
 
 # Генерация логов
 for i in {1..5}; do
-    > log_${i}.txt
+    > log_${i}.log
 
     # Генерация случайного числа записей от 100 до 1000
     num_records=$((RANDOM % 901 + 100))
@@ -97,16 +97,16 @@ for i in {1..5}; do
         ip=$(generate_random_ip)
         method=$(get_random_element "${methods[@]}")
         response_code=$(get_response_code "$method")
-        date_new=$(date -d "$date_start + $step_seconds seconds" "+%Y-%m-%d %H:%M:%S %z")
+        date_new="[$(date -d "$date_start + $step_seconds seconds"  +'%d/%b/%Y:%H:%M:%S %z')]"
         url="$(shuf -e ${urls}  -n1)"
         user_agent=$(shuf -n 1 "$user_agents_file")
 
         # Формирование строки лога и запись в файл
-        echo "${ip} - - [${date_new}] \"${method} ${url} HTTP/1.1\" ${response_code} - \"${user_agent}\"" >> log_${i}.txt
+        echo "${ip} - - ${date_new} \"${method} ${url} HTTP/1.1\" ${response_code} - \"${user_agent}\"" >> log_${i}.log
         ((step_seconds+=$(shuf -i 10-100 -n1) ))
     done
     date_start="$(date +%Y)-$(date +%m)-$(date +%d) 00:00:00 $(date +%z)"
-    date_start="$(date -d "$date0 - $((6-$i)) days" +'%Y-%m-%d')" 
+    date_start="$(date -d "$date_start - $((6-$i)) days" +'%Y-%m-%d')"
 done
 
 # 200 OK: Запрос успешно выполнен.

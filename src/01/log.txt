@@ -1,5 +1,0 @@
-Start Time: Thu Feb 15 01:59:11 +07 2024
-/home/syaonka/linux_monitoring_2/src/aaaa_150224 - 15 Feb 2024 01:59:14
-/home/syaonka/linux_monitoring_2/src/aaaa_150224/aaaa.bbb_150224 - 15 Feb 2024 01:59:14 - 3kb
-/home/syaonka/linux_monitoring_2/src/aaaa_150224/aaaaa.bbb_150224 - 15 Feb 2024 01:59:14 - 3kb
-End Time: Thu Feb 15 01:59:14 +07 2024
