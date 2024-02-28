@@ -18,7 +18,7 @@ function removing_folders {
 }
 
 function delete_from_log {
-    local log_file="../02/log.txt"
+    local log_file="../02/log.log"
     # Используем awk для извлечения путей к папкам из лог-файла
     folders=$(awk '{print $1}' "$log_file")
 

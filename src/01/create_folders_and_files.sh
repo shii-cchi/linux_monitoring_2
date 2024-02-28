@@ -108,7 +108,7 @@ function add_log_file {
     local date=$(date +"%d %b %Y %H:%M:%S")
     local size=$3
 
-    echo "$full_path - $date - $size" >>log.txt
+    echo "$full_path - $date - $size" >> "$LOG_FILE"
 }
 
 # Добавление строки в файл лога для папки
@@ -116,5 +116,5 @@ function add_log_folder {
     local full_path=$1
     local date=$(date +"%d %b %Y %H:%M:%S")
 
-    echo "$full_path - $date" >> log.txt
+    echo "$full_path - $date" >> "$LOG_FILE"
 }

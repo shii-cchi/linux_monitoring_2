@@ -5,7 +5,7 @@ function check_param {
 
     # Проверка количества параметров
     if [ "$#" -ne 3 ]; then
-        echo "Error: Insufficient parameters. Please provide all 3 required parameters. Usage: $0 <folder_name> <file_name> <file_size_kb>"
+        echo "Error: Insufficient parameters. Please provide all 3 required parameters. Usage: $0 <folder_name> <file_name> <file_size_mb>"
         exit 1
     fi
 
