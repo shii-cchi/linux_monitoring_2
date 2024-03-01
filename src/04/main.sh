@@ -10,8 +10,7 @@ fi
 
 # Проверка наличия параметров
 if [ "$#" -ne 0 ]; then
-    echo "Usage: $0"
-    echo "This script does not accept any arguments."
+    echo "Error: This script does not accept any arguments. Usage: $0"
     exit 1
 fi
 

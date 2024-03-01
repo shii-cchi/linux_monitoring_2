@@ -26,6 +26,7 @@ function delete_from_log {
     for folder in $folders; do
         # Проверяем, является ли строка допустимым путем к папке
         if [ -d "$folder" ]; then
+            echo "Deleting folder: $folder"
             sudo rm -R "$folder"
         fi
     done
@@ -39,14 +40,17 @@ function delete_by_datetime {
     start_timestamp=$(date -d "$start_datetime" +"%s")
     end_timestamp=$(date -d "$end_datetime" +"%s")
 
-    # Ищем и удаляем папки, созданные в заданном промежутке времени в /home и всех его подкаталогах
-    sudo find /home -type d -newermt "$start_datetime" ! -newermt "$end_datetime" -exec sudo rm -r {} \; -prune
+    # Ищем и удаляем папки, созданные в заданном промежутке времени в / и всех его подкаталогах
+    sudo find / -maxdepth 3 -type d -newermt "$start_datetime" ! -newermt "$end_datetime" -exec sh -c 'echo "Deleting folder: $1"; sudo rm -r $1' _ {} \; -prune
 }
 
 function delete_by_name_mask {
     read -p "Enter name mask for folders (e.g., ab_150224): " folder_name_mask
 
-    # Ищем и удаляем папки с указанной маской в /home и всех его подкаталогах
-    sudo find /home -type d -name "*$folder_name_mask*" | grep -E "^.*$(echo "$folder_name_mask" | sed 's/_/[^_]*_/g')[^_]*$" | xargs sudo rm -r
+    # Ищем и удаляем папки с указанной маской в / и всех его подкаталогах
+    sudo find / -maxdepth 3 -type d -name "*$folder_name_mask*" | grep -E "^.*$(echo "$folder_name_mask" | sed 's/_/[^_]*_/g')[^_]*$" | while read folder; do
+        echo "Deleting folder: $folder"
+        sudo rm -r "$folder"
+    done
 }
 
